@@ -30,7 +30,7 @@ if (isset($update->edited_message)){
   $eid = $editm->message_id;
   $edname = $editm->from->first_name;
   $jsu = json_decode(file_get_contents(__DIR__.'/users/'.$eid.'.json'));
-  $text = "<b>".$edname."</b>\nمن دیدم که چی گفتی بازم ادیت کنی میفهمم
+  $text = "<b>".$edname."</b>\nادیت کننده خر است من دیدم چی گفتی
   گفتی:
 ".$jsu;
   $id = $update->edited_message->chat->id;
@@ -45,7 +45,7 @@ if (isset($update->edited_message)){
   //$up = file_get_contents(__DIR__.'/users/'.$eid.'.json');
   //str_replace("edited_message","message",$up);
 }elseif(preg_match('/^\/([Ss]tart)/',$text1)){
-  $text = "به ربات ادیت نکن\nخوش آمدید\nبرای اد کردن من به گروه بر روی لینک زیر بزنید\nhttps://telegram.me/EditKhareBOT?startgroup=new";
+  $text = "به ربات ادیت کننده خر است \nخوش آمدید\nبرای اد کردن من به گروه بر روی لینک زیر بزنید\nhttps://telegram.me/EditKhareBOT?startgroup=new";
   bot('sendmessage',[
     'chat_id'=>$chat_id,
     'text'=>$text,
